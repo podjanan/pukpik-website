@@ -1,0 +1,7 @@
+{
+  "/youtube/page": "app/youtube/page.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/shop/page": "app/shop/page.js",
+  "/shop/[slug]/page": "app/shop/[slug]/page.js"
+}

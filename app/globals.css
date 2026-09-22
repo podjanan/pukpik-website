@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #4a3a40;
+  background-color: #fff8fb;
+  background-image: radial-gradient(circle at 14px 14px, rgba(252, 151, 190, .22) 1.2px, transparent 1.6px), linear-gradient(rgba(255, 184, 207, .12) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 184, 207, .12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "Mali", "Nunito", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.platform-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #fff !important;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(74, 58, 64, 0.12);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.platform-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.platform-btn--shopee {
+  background-color: #ee4d2d;
+}
+
+.platform-btn--shopee:hover {
+  background-color: #e04525;
+}
+
+.platform-btn--lazada {
+  background-color: #0f146d;
+}
+
+.platform-btn--lazada:hover {
+  background-color: #0a0f5c;
+}
+
+.platform-btn--sm {
+  flex: 1;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.35rem;
+  font-size: 0.75rem;
+}
+
+button {
+  font: inherit;
+}
+
+.shell {
+  width: min(480px, calc(100% - 24px));
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    width: min(1200px, calc(100% - 32px));
+  }
+}
+
+.paper {
+  background-color: #fffafb;
+  background-image: radial-gradient(circle at 12% 8%, rgba(255, 192, 211, .45) 0, transparent 34%), radial-gradient(circle at 88% 18%, rgba(252, 180, 205, .32) 0, transparent 32%), radial-gradient(circle at 16px 16px, rgba(251, 135, 180, .18) 1px, transparent 1.4px), linear-gradient(rgba(255, 185, 209, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 185, 209, .13) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px, 28px 28px;
+}
+
+.hero-banner {
+  background: linear-gradient(165deg, #ffe1ee 0%, #fff6fa 56%, #fffdfd 100%);
+}
+
+.sticker-title { text-shadow: 1px 1px 0 #fff, 2px 2px 0 rgba(230, 105, 150, .16); letter-spacing: .025em; }
+.scallop-edge { position: relative; }
+.scallop-edge::after { content: ""; position: absolute; z-index: 2; bottom: -1px; left: 0; width: 100%; height: 10px; background: radial-gradient(circle at 8px 0, transparent 7px, #f5abc7 7.5px, #f5abc7 8.5px, transparent 9px) 0 0 / 16px 10px repeat-x; opacity: .75; }
+.doodle-frame::before, .doodle-frame::after { position: absolute; color: #f28bb5; font-size: 1.25rem; line-height: 1; }
+.doodle-frame::before { content: "✦  ♡"; left: 5%; top: 18%; transform: rotate(-12deg); }
+.doodle-frame::after { content: "♡  ✦"; right: 5%; bottom: 12%; transform: rotate(12deg); }
+
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+.card {
+  border: 1px solid #f7c0d4;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(199, 92, 130, 0.12);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  color: #fff;
+  background: linear-gradient(180deg, #fa8eb8, #ec5f92);
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #d9487b;
+  box-shadow: 0 7px 14px rgba(232, 93, 143, 0.22);
+}
+
+.button:focus-visible,
+.navlink:focus-visible {
+  outline: 3px solid #f7a8c4;
+  outline-offset: 3px;
+}
+
+.button-secondary {
+  color: #d9487b;
+  background: #fff;
+  border-color: #f7a8c4;
+}
+
+.button-secondary:hover {
+  background: #fff1f7;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.subtitle {
+  color: #866b75;
+  margin-top: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 2rem 0;
+  }
+}
