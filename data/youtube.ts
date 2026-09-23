@@ -7,11 +7,23 @@ export type YoutubeVideo = {
   url: string;
 };
 
-export const youtube = {
+export type YoutubeChannel = {
+  name: string;
+  handle: string;
+  subscribers: string;
+  description: string;
+  avatar?: string;
+  banner?: string;
+  url: string;
+};
+
+export const youtube: YoutubeChannel & { videos: YoutubeVideo[] } = {
   name: "pxpukpik",
   handle: "@pxpukpik",
   subscribers: "61.7K+ subscribers",
   description: "สตรีมเกม คลิปชิล ๆ และสอนโหลดแอดออน Minecraft ฟรี ♡",
+  avatar: "/images/character-pukpik-cutout.png",
+  banner: "",
   url: "https://www.youtube.com/@pxpukpik",
   videos: [
     {
@@ -40,3 +52,4 @@ export const youtube = {
     },
   ],
 };
+

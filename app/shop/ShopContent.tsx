@@ -3,21 +3,49 @@
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { ProductGrid } from "@/components/ProductCard";
-import { categories, products } from "@/data/products";
+import { categories as defaultCategories, products as defaultProducts, type Product } from "@/data/products";
 
 export function ShopContent() {
   const searchParams = useSearchParams();
   const catFromUrl = searchParams.get("cat");
-  const initial = catFromUrl && categories.includes(catFromUrl) ? catFromUrl : "ทั้งหมด";
-  const [active, setActive] = useState(initial);
+
+  const [productList, setProductList] = useState<Product[]>(defaultProducts);
+  const [categoryList, setCategoryList] = useState<string[]>(defaultCategories);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [active, setActive] = useState("ทั้งหมด");
 
   useEffect(() => {
-    if (catFromUrl && categories.includes(catFromUrl)) setActive(catFromUrl);
-  }, [catFromUrl]);
+    async function loadProducts() {
+      try {
+        const res = await fetch("/api/products");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.products && Array.isArray(data.products)) {
+            setProductList(data.products);
+          }
+          if (data.categories && Array.isArray(data.categories)) {
+            setCategoryList(data.categories);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch products from API:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadProducts();
+  }, []);
+
+  useEffect(() => {
+    if (catFromUrl && categoryList.includes(catFromUrl)) {
+      setActive(catFromUrl);
+    }
+  }, [catFromUrl, categoryList]);
 
   const filtered = useMemo(
-    () => (active === "ทั้งหมด" ? products : products.filter((p) => p.category === active)),
-    [active],
+    () => (active === "ทั้งหมด" ? productList : productList.filter((p) => p.category === active)),
+    [active, productList],
   );
 
   return (
@@ -32,7 +60,7 @@ export function ShopContent() {
 
       <section className="shell section">
         <div className="mb-6 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {categories.map((c) => (
+          {categoryList.map((c) => (
             <button
               key={c}
               type="button"
@@ -47,7 +75,14 @@ export function ShopContent() {
             </button>
           ))}
         </div>
-        <ProductGrid products={filtered} />
+
+        {isLoading ? (
+          <div className="py-12 text-center text-sm font-semibold text-[#866b75]">
+            <span className="inline-block animate-bounce">🎀</span> กำลังโหลดสินค้าล่าสุด...
+          </div>
+        ) : (
+          <ProductGrid products={filtered} />
+        )}
       </section>
     </main>
   );

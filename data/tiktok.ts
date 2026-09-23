@@ -1,24 +1,33 @@
-export const tiktok = {
+export type TiktokVideo = {
+  id?: string;
+  caption: string;
+  views: string;
+  playCountFormatted?: string;
+  thumbnail?: string;
+  playAddr?: string;
+  url: string;
+  isPinned?: boolean;
+};
+
+export type TiktokProfile = {
+  username: string;
+  displayName: string;
+  bio: string;
+  followers: string;
+  following: string;
+  likes: string;
+  avatar?: string;
+  url: string;
+};
+
+export const tiktok: TiktokProfile & { videos: TiktokVideo[] } = {
   username: "@pxpukpik",
   displayName: "⁺◟✿ ทูเดย์อิสพุกพิก ‧₊˚",
-  bio: "🎀 dm for work ꒰ @185vodyy ꒱ 🍮 สอนลงแอดออนมายคราฟฟรี · yt: pxpukpik",
-  followers: "223.64K",
+  bio: "₊𐙚˚\n💬 dm for work ꒰ @185vodyy ꒱ 🍮🎀\n♡ ig : pxpukpik Ი𐑼\nสอนลงแอดออนมายคราฟฟรี ꒰ yt : pxpukpik ꒱",
+  followers: "223.5K",
   following: "375",
-  likes: "5.35M",
+  likes: "5.4M",
+  avatar: "",
   url: "https://www.tiktok.com/@pxpukpik",
-  videos: [
-    "#thesims4 #thesims #thesims4cc ♡💭🎀",
-    "Unbox เคส Hello Kitty และชาร์มสุดน่ารัก 🎀✨",
-    "✂️ Unbox หูฟังบลูทูธตัวใหม่กันนน><🎧💭👀",
-    "🏡 Unbox ปลั๊กไฟ vexxo ที่ควรมีติดบ้าน",
-    "คลิปนี้มารีวิวหูฟังไร้สาย Galaxy Buds4 กันนะคะ ♡",
-    "⭐️ Unbox Hello Kitty ลำโพงบลูทูธสุดน่ารัก",
-  ].map(
-    (caption, i) => ({
-      caption,
-      views: ["1.56K", "1.18K", "1.2K", "3.44K", "1.97K", "2.4K"][i],
-      thumbnail: "",
-      url: "https://www.tiktok.com/@pxpukpik",
-    }),
-  ),
+  videos: [],
 };

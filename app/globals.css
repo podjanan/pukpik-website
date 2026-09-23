@@ -27,47 +27,30 @@ a {
   text-decoration: none;
 }
 
-.platform-btn {
+.cute-platform-btn {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  padding: 0.85rem 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 800;
-  color: #fff !important;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(74, 58, 64, 0.12);
-  transition: transform 0.2s, filter 0.2s;
+  justify-content: space-between;
+  border-radius: 9999px;
+  border: 2px solid #f9a8c9;
+  background-color: #fffafc;
+  background-image: 
+    radial-gradient(circle at 8% 50%, rgba(255, 192, 215, 0.45) 0, transparent 45%),
+    radial-gradient(circle at 92% 50%, rgba(255, 192, 215, 0.45) 0, transparent 45%),
+    linear-gradient(rgba(255, 185, 209, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 185, 209, 0.14) 1px, transparent 1px);
+  background-size: auto, auto, 14px 14px, 14px 14px;
+  box-shadow: 0 4px 14px rgba(244, 114, 182, 0.14);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none !important;
 }
 
-.platform-btn:hover {
+.cute-platform-btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.05);
-}
-
-.platform-btn--shopee {
-  background-color: #ee4d2d;
-}
-
-.platform-btn--shopee:hover {
-  background-color: #e04525;
-}
-
-.platform-btn--lazada {
-  background-color: #0f146d;
-}
-
-.platform-btn--lazada:hover {
-  background-color: #0a0f5c;
-}
-
-.platform-btn--sm {
-  flex: 1;
-  border-radius: 0.75rem;
-  padding: 0.65rem 0.35rem;
-  font-size: 0.75rem;
+  border-color: #f472b6;
+  box-shadow: 0 6px 18px rgba(244, 114, 182, 0.26);
 }
 
 button {
