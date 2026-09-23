@@ -49,23 +49,51 @@ export function LazadaIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
-export function TikTokIcon({ className = "w-6 h-6" }: { className?: string }) {
+export function TikTokIcon({ className = "w-5 h-5", size }: { className?: string; size?: number }) {
+  const style = size ? { width: size, height: size } : undefined;
   return (
-    <svg viewBox="0 0 40 40" fill="none" className={className}>
-      {/* Cyan backdrop offset */}
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} style={style}>
+      <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 1 1-2.901-2.9 2.884 2.884 0 0 1 1.02.193v-3.5a6.376 6.376 0 0 0-1.02-.084 6.34 6.34 0 1 0 6.34 6.34V9a8.214 8.214 0 0 0 4.776 1.524V7.079a4.843 4.843 0 0 1-1.000-.393z" />
+    </svg>
+  );
+}
+
+export function LineIcon({ className = "w-5 h-5", size }: { className?: string; size?: number }) {
+  const style = size ? { width: size, height: size } : undefined;
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} style={style}>
+      {/* LINE Speech Bubble */}
       <path
-        d="M24 8V24A6 6 0 1118 18V22A2 2 0 1020 24V14A10 10 0 0028 16V12A8 8 0 0124 8Z"
-        fill="#00F2FE"
-        transform="translate(-1.2, -1.2)"
+        d="M21.5 10.5C21.5 5.8 17.2 2 12 2C6.8 2 2.5 5.8 2.5 10.5C2.5 14.7 6.3 18.2 11.5 18.8C11.8 18.9 12.3 19 12.4 19.3C12.5 19.6 12.5 20 12.4 20.3C12.3 20.7 12.1 21.8 12.1 22.1C12 22.7 12.3 22.7 12.6 22.5C12.9 22.3 16.5 20.2 18 18.5C20.2 17.4 21.5 14.2 21.5 10.5Z"
+        fill="currentColor"
       />
-      {/* Red backdrop offset */}
+      {/* LINE text cutout */}
       <path
-        d="M24 8V24A6 6 0 1118 18V22A2 2 0 1020 24V14A10 10 0 0028 16V12A8 8 0 0124 8Z"
-        fill="#FF0050"
-        transform="translate(1.2, 1.2)"
+        d="M6.86 12.5h2.38v-.76H7.62V8.42H6.86v4.08zm3.28-4.08h.76v4.08h-.76V8.42zm3.93 0h-.76v2.54l-1.68-2.54h-.75v4.08h.76V9.96l1.68 2.54h.75V8.42zm3.73 0h-2.38v4.08h2.38v-.76h-1.62v-.9h1.54v-.76h-1.54v-.9h1.62v-.76z"
+        fill="#FFFFFF"
       />
-      {/* Black note */}
-      <path d="M24 8V24A6 6 0 1118 18V22A2 2 0 1020 24V14A10 10 0 0028 16V12A8 8 0 0124 8Z" fill="#000000" />
+    </svg>
+  );
+}
+
+export function Lemon8Icon({ className = "w-5 h-5", size }: { className?: string; size?: number }) {
+  const style = size ? { width: size, height: size } : undefined;
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} style={style}>
+      {/* Lemon8 outer shape */}
+      <path
+        d="M12 21.5C16.6944 21.5 20.5 17.6944 20.5 13C20.5 8.30558 16.6944 4.5 12 4.5C7.30558 4.5 3.5 8.30558 3.5 13C3.5 17.6944 7.30558 21.5 12 21.5Z"
+        fill="currentColor"
+      />
+      {/* Lemon leaf */}
+      <path
+        d="M12 4.5C13.5 2.2 16.2 1.8 17.8 2.3C17.8 4.3 15.6 6 13.5 5.3L12 4.5Z"
+        fill="currentColor"
+        opacity="0.85"
+      />
+      {/* Number 8 inside in white cutout */}
+      <circle cx="12" cy="10.2" r="2.1" stroke="#FFFFFF" strokeWidth="1.8" fill="none" />
+      <circle cx="12" cy="15" r="2.6" stroke="#FFFFFF" strokeWidth="1.8" fill="none" />
     </svg>
   );
 }

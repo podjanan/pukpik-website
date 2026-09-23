@@ -1,14 +1,15 @@
-import { Instagram, Music2, Youtube, Facebook, Link2, Heart } from "lucide-react";
+import { Instagram, Youtube, Link2, Heart } from "lucide-react";
 import { BrandImage } from "@/components/BrandImage";
-import { site } from "@/data/site";
+import { socialLinks } from "@/data/site";
+import { LineIcon, Lemon8Icon, TikTokIcon } from "@/components/PlatformIcons";
 
-const social = [
-  { Icon: Instagram, url: site.instagram, label: "Instagram" },
-  { Icon: Music2, url: site.tiktok, label: "TikTok" },
-  { Icon: Youtube, url: site.youtube, label: "YouTube" },
-  { Icon: Facebook, url: site.facebook, label: "Facebook" },
-  { Icon: Link2, url: "https://linktr.ee", label: "Link" },
-] as const;
+const socialIconsMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  line: LineIcon,
+  instagram: Instagram,
+  tiktok: TikTokIcon,
+  lemon8: Lemon8Icon,
+  youtube: Youtube,
+};
 
 export function Footer() {
   return (
@@ -32,18 +33,21 @@ export function Footer() {
         <p className="mt-4 font-extrabold tracking-wide text-rose">ขอบคุณที่แวะเข้ามานะคะ</p>
         <p className="mt-1 text-sm text-[#866b75]">ติดตาม PUKPIK ได้ทุกช่องทางเลยนะ ♡</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          {social.map(({ Icon, url, label }) => (
-            <a
-              key={label}
-              aria-label={label}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="grid h-11 w-11 place-items-center rounded-full border-2 border-white bg-white text-rose shadow-candy transition hover:-translate-y-0.5 hover:bg-pink-50"
-            >
-              <Icon size={19} />
-            </a>
-          ))}
+          {socialLinks.map(({ label, url, icon }) => {
+            const Icon = socialIconsMap[icon] || Link2;
+            return (
+              <a
+                key={label}
+                aria-label={label}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grid h-11 w-11 place-items-center rounded-full border-2 border-white bg-white text-rose shadow-candy transition hover:-translate-y-0.5 hover:bg-pink-50"
+              >
+                <Icon size={19} />
+              </a>
+            );
+          })}
         </div>
         <p className="mt-8 inline-flex items-center gap-1 rounded-full border border-pink-200 bg-white px-4 py-2 text-xs font-bold text-[#866b75]">
           Have a nice day <Heart size={12} className="fill-rose text-rose" />

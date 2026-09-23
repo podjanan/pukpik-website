@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Grid2X2, Sparkles, Heart, Shirt } from "lucide-react";
+import { Grid2X2, Sparkles, Heart, Shirt ,Headphones} from "lucide-react";
 
 const categories = [
   { href: "/shop", label: "สินค้าทั้งหมด", sub: "All Products", Icon: Grid2X2 },
   { href: "/shop?cat=ของใช้", label: "ของใช้ประจำวัน", sub: "Daily Life", Icon: Sparkles },
-  { href: "/shop?cat=สินค้าแต่งหน้า", label: "สินค้าแต่งหน้า", sub: "Beauty", Icon: Heart },
+  { href: "/shop?cat=อุปกรณ์ไอทีและแกดเจ็ต", label: "อุปกรณ์ไอทีและแกดเจ็ต", sub: "IT Accessories & Gadgets", Icon: Headphones },
   { href: "/shop?cat=แฟชั่น", label: "แฟชั่น & เสื้อผ้า", sub: "Fashion", Icon: Shirt },
 ] as const;
 

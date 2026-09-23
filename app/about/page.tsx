@@ -1,12 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { socialLinks, site } from "@/data/site";
-import { Mail, ChevronRight, Shield, Share2 } from "lucide-react";
+import { Mail, ChevronRight, Shield, Share2, Instagram, Youtube, Link2 } from "lucide-react";
+import { LineIcon, Lemon8Icon, TikTokIcon } from "@/components/PlatformIcons";
 
 export const metadata = { title: "เพิ่มเติม" };
 
+const socialIconsMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+  line: LineIcon,
+  instagram: Instagram,
+  tiktok: TikTokIcon,
+  lemon8: Lemon8Icon,
+  youtube: Youtube,
+};
+
 const menu = [
-  { href: `mailto:${site.email}`, label: "ติดต่อ / ร่วมงาน", Icon: Mail, external: true },
+  { href: site.line, label: "ติดต่อ / ร่วมงาน", Icon: LineIcon, external: true },
   { href: "#", label: "นโยบายความเป็นส่วนตัว", Icon: Shield, external: false },
   { href: "/#", label: "ช่องทางโซเชียลอื่น ๆ", Icon: Share2, external: false },
 ] as const;
@@ -58,21 +67,27 @@ export default function About() {
         <div className="card border-2 border-pink-100 p-4">
           <p className="mb-3 text-sm font-extrabold text-rose">ช่องทางติดตาม</p>
           <div className="grid gap-2">
-            {socialLinks.map((s) => (
-              <a
-                key={s.label}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between rounded-xl border border-pink-200 px-4 py-3 text-sm font-bold hover:bg-pink-50"
-              >
-                <span>
-                  {s.label}
-                  <small className="ml-2 font-normal text-[#866b75]">{s.handle}</small>
-                </span>
-                <ChevronRight size={16} className="text-rose" />
-              </a>
-            ))}
+            {socialLinks.map((s) => {
+              const Icon = socialIconsMap[s.icon] || Link2;
+              return (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between rounded-xl border border-pink-200 px-4 py-3 text-sm font-bold hover:bg-pink-50 transition"
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className="grid h-7 w-7 place-items-center rounded-lg bg-pink-100 text-rose">
+                      <Icon size={16} />
+                    </span>
+                    {s.label}
+                    <small className="font-normal text-[#866b75]">{s.handle}</small>
+                  </span>
+                  <ChevronRight size={16} className="text-rose" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
