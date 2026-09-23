@@ -3,7 +3,7 @@ import "./globals.css";
 import { AppShell } from "@/components/AppShell";
 
 export const metadata: Metadata = {
-  title: { default: "PUKPIK — รวมลิงก์ร้านค้า & สินค้าน่ารัก", template: "%s | PUKPIK" },
+  title: { default: "PUKPIK — ทูเดย์อิสพุกพิก", template: "%s | PUKPIK" },
   description: "รวมลิงก์ร้านค้า สินค้าน่ารัก และคอนเทนต์จาก PUKPIK ทุกช่องทาง",
   openGraph: {
     title: "PUKPIK",

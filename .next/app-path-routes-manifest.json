@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/image-proxy/route": "/api/image-proxy",
+  "/api/tiktok/route": "/api/tiktok",
+  "/api/products/route": "/api/products",
+  "/api/youtube/route": "/api/youtube",
+  "/page": "/",
+  "/shop/page": "/shop",
+  "/tiktok/page": "/tiktok",
+  "/about/page": "/about",
+  "/shop/[slug]/page": "/shop/[slug]",
+  "/youtube/page": "/youtube"
+}
