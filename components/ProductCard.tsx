@@ -102,7 +102,7 @@ export function ProductCard({ product }: { product: Product }) {
   const official = product.links.official;
 
   return (
-    <article className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border-2 border-pink-200/90 bg-gradient-to-b from-white via-pink-50/30 to-white p-3.5 shadow-[0_8px_24px_rgba(244,114,182,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-300 hover:shadow-[0_14px_32px_rgba(244,114,182,0.22)] sm:p-4">
+    <article className="group relative flex flex-col justify-between overflow-hidden rounded-[20px] border-2 border-pink-200/90 bg-gradient-to-b from-white via-pink-50/30 to-white p-2.5 shadow-[0_8px_24px_rgba(244,114,182,0.12)] transition-all duration-300 hover:-translate-y-1.5 hover:border-pink-300 hover:shadow-[0_14px_32px_rgba(244,114,182,0.22)] sm:rounded-[28px] sm:p-4">
       {/* Decorative Corner Star */}
       <span aria-hidden="true" className="pointer-events-none absolute right-3 top-2 text-xs text-pink-300/70 select-none">
         ✦
@@ -119,47 +119,48 @@ export function ProductCard({ product }: { product: Product }) {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Category / Brand Sticker Badge */}
-            <div className="absolute left-2.5 top-2.5 z-10 flex items-center gap-1 rounded-full border border-pink-200/90 bg-white/95 px-2.5 py-1 text-[11px] font-bold text-rose shadow-sm backdrop-blur-sm">
-              <Sparkles size={11} /> {product.brand || product.category}
+            <div className="absolute left-1.5 top-1.5 z-10 flex items-center gap-0.5 rounded-full border border-pink-200/90 bg-white/95 px-1.5 py-0.5 text-[9px] font-bold text-rose shadow-sm backdrop-blur-sm sm:left-2.5 sm:top-2.5 sm:gap-1 sm:px-2.5 sm:py-1 sm:text-[11px]">
+              <Sparkles size={9} className="sm:hidden" />
+              <Sparkles size={11} className="hidden sm:inline" /> {product.brand || product.category}
             </div>
           </div>
         </Link>
 
         {/* Title & Info */}
-        <div className="mt-3.5 space-y-1">
+        <div className="mt-2 space-y-0.5 sm:mt-3.5 sm:space-y-1">
           <Link href={`/shop/${product.slug}`} className="block">
-            <h3 className="line-clamp-2 min-h-[2.5rem] font-mali text-sm font-extrabold leading-snug text-[#4a3a40] transition-colors group-hover:text-rose sm:text-base">
+            <h3 className="line-clamp-2 min-h-[2rem] font-mali text-xs font-extrabold leading-snug text-[#4a3a40] transition-colors group-hover:text-rose sm:min-h-[2.5rem] sm:text-base">
               {product.name}
             </h3>
           </Link>
-          <p className="text-xs font-semibold text-[#866b75]">
+          <p className="hidden text-xs font-semibold text-[#866b75] sm:block">
             🎀 {product.category}
           </p>
         </div>
       </div>
 
       {/* Action Footer */}
-      <div className="mt-4 pt-2 border-t border-pink-100/80">
-        <div className="flex items-center justify-between gap-2 mb-2">
-          {/* Platform icons preview */}
-          <div className="flex items-center gap-1.5">
-            {shopee && <ShopeeIcon className="w-5 h-5 opacity-90 hover:opacity-100" />}
-            {lazada && <LazadaIcon className="w-5 h-5 opacity-90 hover:opacity-100" />}
-            {tiktok && <TikTokIcon className="w-5 h-5 opacity-90 hover:opacity-100" />}
-            {official && <OfficialStoreIcon className="w-5 h-5 opacity-90 hover:opacity-100" />}
-          </div>
+      <div className="mt-2 border-t border-pink-100/80 pt-1.5 sm:mt-4 sm:pt-2">
+        {/* Platform icons preview — hidden on mobile to save space */}
+        <div className="mb-1.5 hidden items-center gap-1.5 sm:flex">
+          {shopee && <ShopeeIcon className="h-5 w-5 opacity-90 hover:opacity-100" />}
+          {lazada && <LazadaIcon className="h-5 w-5 opacity-90 hover:opacity-100" />}
+          {tiktok && <TikTokIcon className="h-5 w-5 opacity-90 hover:opacity-100" />}
+          {official && <OfficialStoreIcon className="h-5 w-5 opacity-90 hover:opacity-100" />}
         </div>
 
         {/* View Details Button */}
         <Link
           href={`/shop/${product.slug}`}
-          className="cute-platform-btn group/btn flex w-full items-center justify-between rounded-full px-3.5 py-2 text-xs sm:text-sm font-bold text-rose"
+          className="cute-platform-btn group/btn flex w-full items-center justify-between rounded-full px-2.5 py-1.5 text-[11px] font-bold text-rose sm:px-3.5 sm:py-2 sm:text-sm"
         >
           <CuteBowRibbon className="absolute -right-1.5 -top-2 h-5.5 w-5.5 text-pink-400 transition-transform group-hover/btn:rotate-12" />
           <span className="font-mali font-bold text-[#5c3a47] group-hover/btn:text-pink-600">
-            ดูรายละเอียด & สั่งซื้อ
+            <span className="hidden sm:inline">ดูรายละเอียด & สั่งซื้อ</span>
+            <span className="sm:hidden">ดูสินค้า</span>
           </span>
-          <ArrowRight size={15} className="text-pink-400 transition-transform group-hover/btn:translate-x-1" />
+          <ArrowRight size={13} className="text-pink-400 transition-transform group-hover/btn:translate-x-1 sm:hidden" />
+          <ArrowRight size={15} className="hidden text-pink-400 transition-transform group-hover/btn:translate-x-1 sm:inline" />
         </Link>
       </div>
     </article>
@@ -168,7 +169,7 @@ export function ProductCard({ product }: { product: Product }) {
 
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
       {products.map((p) => (
         <ProductCard key={p.slug} product={p} />
       ))}
