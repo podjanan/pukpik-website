@@ -40,9 +40,8 @@ export default function About() {
               <p className="font-bold text-rose">เกี่ยวกับ PUKPIK</p>
               <h1 className="mt-1 text-2xl font-extrabold">สวัสดีค่ะ ♡</h1>
               <p className="mt-4 leading-7 text-[#725d65]">
-                PUKPIK คือพื้นที่เล็ก ๆ ที่อยากชวนทุกคนมาเติมความสุขไปกับของน่ารัก ๆ เราอยากให้ทุกครั้งที่แวะมา 
-                คุณรู้สึกผ่อนคลายและเป็นตัวของตัวเอง เหมือนได้แวะมาพูดคุยกับเพื่อนคนหนึ่งค่ะ
-
+                สนใจติดต่องานช่อง @pxpukpik กดลิงก์ด้านล่างได้เลยนะคะ ♡ <br />
+                For collabs, please contact @pxpukpik Click the link below to get in touch! ♡
               </p>
             </div>
           </div>
