@@ -15,7 +15,7 @@ const socialIconsMap: Record<string, React.ComponentType<{ size?: number; classN
 };
 
 const menu = [
-  { href: site.line, label: "ติดต่อ / ร่วมงาน", Icon: LineIcon, external: true },
+  { href: site.line, label: "ติดต่อ / dm for work", Icon: LineIcon, external: true },
   { href: "#", label: "นโยบายความเป็นส่วนตัว", Icon: Shield, external: false },
   { href: "/#", label: "ช่องทางโซเชียลอื่น ๆ", Icon: Share2, external: false },
 ] as const;
@@ -38,10 +38,10 @@ export default function About() {
             </div>
             <div className="text-center sm:text-left">
               <p className="font-bold text-rose">เกี่ยวกับ PUKPIK</p>
-              <h1 className="mt-1 text-2xl font-extrabold">สวัสดีค่ะ ♡</h1>
+              <h1 className="mt-1 text-2xl font-extrabold">สวัสดีค่ะ ˃ ᵕ ˂ ♡</h1>
               <p className="mt-4 leading-7 text-[#725d65]">
-                สนใจติดต่องานช่อง @pxpukpik กดลิงก์ด้านล่างได้เลยนะคะ ♡ <br />
-                For collabs, please contact @pxpukpik Click the link below to get in touch! ♡
+                สนใจติดต่องานช่อง @pxpukpik กดลิงก์ด้านล่างได้เลยนะคะ ♡ <br/>
+                For collabs, please contact @pxpukpik Click the link below to get in touch! <br />₍𐙚ྀᐢ. .ᐢ₎♡︎
               </p>
             </div>
           </div>
