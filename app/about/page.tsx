@@ -16,7 +16,7 @@ const socialIconsMap: Record<string, React.ComponentType<{ size?: number; classN
 
 const menu = [
   { href: site.line, label: "ติดต่อ / dm for work", Icon: LineIcon, external: true },
-  { href: "#", label: "นโยบายความเป็นส่วนตัว", Icon: Shield, external: false },
+  // { href: "#", label: "นโยบายความเป็นส่วนตัว", Icon: Shield, external: false },
   { href: "/#", label: "ช่องทางโซเชียลอื่น ๆ", Icon: Share2, external: false },
 ] as const;
 
