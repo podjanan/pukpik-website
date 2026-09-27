@@ -35,7 +35,7 @@ export default function Home() {
               height={380}
               priority
               backdropClassName="bg-transparent"
-              className="relative mx-auto w-[92%] max-w-[320px] drop-shadow-[0_10px_12px_rgba(224,110,157,.16)]"
+              className="relative mx-auto w-[92%] max-w-[280px] drop-shadow-[0_10px_12px_rgba(224,110,157,.16)]"
             />
             <BrandImage
               src="/images/logo-pukpik.png"

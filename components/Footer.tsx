@@ -21,14 +21,14 @@ export function Footer() {
       <div className="shell flex flex-col items-center text-center">
         <div className="relative mx-auto w-full max-w-[280px]">
           <div className="absolute inset-6 rounded-full bg-pink-200/50 blur-2xl" />
-          <BrandImage
+          {/* <BrandImage
             src="/images/character-pukpik.png"
             alt="ตัวละคร PUKPIK"
             width={280}
             height={320}
             backdropClassName="bg-[#fff0f6]"
             className="relative mx-auto block w-full drop-shadow-lg"
-          />
+          /> */}
         </div>
         <p className="mt-4 font-extrabold tracking-wide text-rose">ขอบคุณที่แวะเข้ามานะคะ</p>
         <p className="mt-1 text-sm text-[#866b75]">ติดตาม PUKPIK ได้ทุกช่องทางเลยนะ ♡</p>
