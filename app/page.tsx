@@ -35,16 +35,17 @@ export default function Home() {
               height={380}
               priority
               backdropClassName="bg-transparent"
-              className="relative mx-auto w-[92%] max-w-[280px] drop-shadow-[0_10px_12px_rgba(224,110,157,.16)]"
+              className="relative mx-auto w-[92%] max-w-[260px] drop-shadow-[0_10px_12px_rgba(224,110,157,.16)]"
             />
-            <BrandImage
+            {/* <BrandImage
               src="/images/logo-pukpik.png"
               alt="PUKPIK"
               width={260}
               height={80}
               backdropClassName="bg-transparent"
               className="relative -mt-5 mx-auto block w-[min(72vw,260px)]"
-            />
+            /> */}
+            <h1 ><b>pxpukpik</b></h1>
             <div className="relative mt-3 space-y-1 text-center font-semibold text-[#725d65]">
               <p className="whitespace-nowrap text-[10.5px] xs:text-[11.5px] sm:text-sm md:text-base leading-snug">
                 ʚ 𓈒ྀི ⸝⸝• ·̫ •⸝⸝ マ ♡ Welcome to pxpukpik 𓈒 ིྀ
